@@ -1,3 +1,3 @@
-export default function bonjour(): string{
-    return "Bonjour";
+export default function bonjour(): string {
+  return "Bonjour";
 }
