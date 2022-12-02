@@ -4,7 +4,10 @@
  * @param coutFabrication prix de vente du produit
  * @returns Une phrase qui indique le bénéfice/perte
  */
-function calculerBenefice(prixVente: number, coutFabrication: number): string {
+export default function calculerBenefice(
+  prixVente: number,
+  coutFabrication: number
+): string {
   const benefice: number = prixVente - coutFabrication;
 
   if (benefice < 0) {

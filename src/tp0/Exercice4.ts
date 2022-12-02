@@ -5,18 +5,18 @@
  * @param nombre3 encore un nombre
  * @returns le plus grand nombre
  */
-function plusGrandNombre(
+export default function plusGrandNombre(
   nombre1: number,
   nombre2: number,
   nombre3: number
 ): string {
-  let plusGrandNombre: number = nombre1;
-  if (nombre2 > plusGrandNombre) {
-    plusGrandNombre = nombre2;
-  } else if (plusGrandNombre < nombre3) {
-    plusGrandNombre = nombre3;
+  if (nombre1 >= nombre2 && nombre1 >= nombre3) {
+    return `Le plus grand nombre est ${nombre1} <3`;
+  } else if (nombre2 >= nombre3) {
+    return `Le plus grand nombre est ${nombre2} <3`;
+  } else {
+    return `Le plus grand nombre est ${nombre3} <3`;
   }
-  return `Le plus grand nombre est ${plusGrandNombre} <3`;
 }
 
 console.log(plusGrandNombre(3, 8, 90));

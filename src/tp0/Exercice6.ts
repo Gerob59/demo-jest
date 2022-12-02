@@ -16,7 +16,7 @@
  * @param note note à vérifier
  * @returns true si ok, false si ko
  */
-function verifierNote(note: number): boolean {
+export function verifierNote(note: number): boolean {
   if (note < 0 || note > 20) {
     return false;
   } else {
@@ -29,7 +29,7 @@ function verifierNote(note: number): boolean {
  * @param notes liste de notes
  * @returns la moyenne sur 20
  */
-function calculerMoyenne(...notes: number[]): number {
+export function calculerMoyenne(...notes: number[]): number {
   let moyenne = 0;
   for (let note of notes) {
     if (verifierNote(note)) {
@@ -48,7 +48,7 @@ function calculerMoyenne(...notes: number[]): number {
  * @param moyenne la moyenne à vérifier
  * @returns une mention
  */
-function definirMention(moyenne: number): string {
+export function definirMention(moyenne: number): string {
   if (moyenne < 4) {
     return "catastrophique :'(";
   } else if (moyenne < 10) {
@@ -68,24 +68,13 @@ function definirMention(moyenne: number): string {
  * @param notes notes de l'élève
  * @returns bulletin et appréciation
  */
-function bulletin(nomEleve: string, ...notes: number[]): string {
+export function bulletin(nomEleve: string, ...notes: number[]): string {
   let moyenne: number = calculerMoyenne(...notes);
   let mention: string = definirMention(moyenne);
   return `${nomEleve} a une moyenne de ${moyenne}, son travail est donc ${mention} !`;
 }
 
-const bulletinTheodule: string = bulletin(
-  "Théodule",
-  5,
-  8,
-  20,
-  6,
-  9,
-  15,
-  12,
-  11,
-  5,
-  7
-);
+let bulletinTheodul: string;
+bulletinTheodul = bulletin("Théodule", 2, 8, 20, 6, 9, 15, 12, 11, 5, 7);
 
-console.log(bulletinTheodule);
+console.log(bulletinTheodul);
